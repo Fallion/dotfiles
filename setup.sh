@@ -14,7 +14,6 @@ if [ "$(uname)" == "Darwin" ]; then
 	# Make sure we’re using the latest Homebrew
 	brew update
 	# Upgrade any already-installed formulae
-	brew tap homebrew/versions
 	brew upgrade --all
 
 	apps=(
@@ -28,13 +27,17 @@ if [ "$(uname)" == "Darwin" ]; then
 	brew install "${apps[@]}"
 	sudo easy_install pip
 
+	# Install ZSH
+	echo -e "\u001b[7mInstalling Oh-My-Zsh...\u001b[0m"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 	# Install Caskroom
 	brew tap caskroom/cask
 	brew tap caskroom/versions
 
 	apps=(
 		cyberduck
-		docker
+		# docker
 		discord
 		brave-browser
 		insomnia
@@ -52,30 +55,30 @@ if [ "$(uname)" == "Darwin" ]; then
 	defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
 	killall SystemUIServer
 
-	# Set Dock items
-	OLDIFS=$IFS
-	IFS=''
+	# # Set Dock items
+	# OLDIFS=$IFS
+	# IFS=''
 
-	apps=(
-		'Brave Browser'
-		'Visual Studio Code'
-		Insomnia
-		Spotify
-		Slack
-		Cyberduck
-		'System Preferences'
-	)
+	# apps=(
+	# 	'Brave Browser'
+	# 	'Visual Studio Code'
+	# 	Insomnia
+	# 	Spotify
+	# 	Slack
+	# 	Cyberduck
+	# 	'System Preferences'
+	# )
 
-	dockutil --no-restart --remove all $HOME
-	for app in "${apps[@]}"
-	do
-		echo "Keeping $app in Dock"
-		dockutil --no-restart --add /Applications/$app.app $HOME
-	done
-	killall Dock
+	# dockutil --no-restart --remove all $HOME
+	# for app in "${apps[@]}"
+	# do
+	# 	echo "Keeping $app in Dock"
+	# 	dockutil --no-restart --add /Applications/$app.app $HOME
+	# done
+	# killall Dock
 
-	# restore $IFS
-	IFS=$OLDIFS
+	# # restore $IFS
+	# IFS=$OLDIFS
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	# Ask for the administrator password upfront
@@ -106,12 +109,10 @@ git remote add origin git@github.com:Fallion/dotfiles.git
 # Symlink dotfiles
 git pull origin master;
 
-for file in $(ls -A); do
-if [ "$file" != ".git" ] && \
-   [ "$file" != "setup.sh" ] && \
-   [ "$file" != "remote-setup.sh" ] && \
-   [ "$file" != "README.md" ] && \
-   [ "$file" != "images" ]; then
-    ln -sf $PWD/$file $HOME/
-fi
+echo -e "\u001b[36;1mAdding symlinks...\u001b[0m"
+ln -sv $CWD/.zshrc ~/.zshrc
+ln -sv $CWD/.gitconfig ~/.gitconfig
+
+echo -e "\u001b[32;1mDone.\u001b[0m"
+
 done

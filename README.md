@@ -33,3 +33,7 @@ sh setup.sh
 #### wget
 
 `wget -O - --no-check-certificate https://raw.githubusercontent.com/Fallion/dotfiles/master/remote-setup.sh | bash`
+
+# Windows install
+
+`Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Fallion/dotfiles/master/windows/install.ps1'))`

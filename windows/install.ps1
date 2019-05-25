@@ -22,6 +22,7 @@ choco install yarn --limit-output
 
 # misc
 choco install steam --limit-output
+choco install spotify --limit-output
 
 Refresh-Environment
 

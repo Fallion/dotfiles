@@ -11,6 +11,7 @@ choco install curl                --limit-output
 choco install git.install         --limit-output -params '"/GitAndUnixToolsOnPath /NoShellIntegration"'
 choco install nvm.portable        --limit-output
 choco install golang              --limit-output
+choco install dart-sdk            --limit-output
 
 # browser
 choco install brave  --limit-output

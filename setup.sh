@@ -16,6 +16,9 @@ if [ "$(uname)" == "Darwin" ]; then
 	# Upgrade any already-installed formulae
 	brew upgrade --all
 
+	# Add tap for Dart
+	brew tap dart-lang/dart
+
 	apps=(
 		git
         go
@@ -25,6 +28,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		wget
 		zsh
 		make
+		dart
 	)
 	brew install "${apps[@]}"
 	sudo easy_install pip

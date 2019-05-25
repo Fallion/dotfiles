@@ -43,6 +43,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		spotify
 		steam
 		visual-studio-code
+		1password
 	)
 	brew cask install "${apps[@]}"
 

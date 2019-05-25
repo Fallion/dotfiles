@@ -17,6 +17,7 @@ choco install brave  --limit-output
 
 # devs tools
 choco install vscode --limit-output
+choco install 1password --limit-output
 
 Refresh-Environment
 

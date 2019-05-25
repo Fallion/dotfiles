@@ -27,9 +27,9 @@ sh setup.sh
 
 #### curl
 
-bash -c "`curl -fsSL https://raw.github.com/Fallion/dotfiles/master/remote-setup.sh`"
+`curl -fsSL https://raw.github.com/Fallion/dotfiles/master/remote-setup.sh | bash`
 
 
 #### wget
 
-bash -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/Fallion/dotfiles/master/remote-setup.sh`"
+`wget -O - --no-check-certificate https://raw.githubusercontent.com/Fallion/dotfiles/master/remote-setup.sh | bash`

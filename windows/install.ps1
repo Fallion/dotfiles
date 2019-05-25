@@ -18,6 +18,7 @@ choco install brave  --limit-output
 # devs tools
 choco install vscode --limit-output
 choco install 1password --limit-output
+choco install yarn --limit-output
 
 # misc
 choco install steam --limit-output

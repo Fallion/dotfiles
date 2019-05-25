@@ -47,6 +47,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		graphql-playground
 		now
 		electron
+		google-cloud-sdk
 	)
 	brew cask install "${apps[@]}"
 

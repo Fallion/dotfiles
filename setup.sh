@@ -36,7 +36,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	apps=(
 		gitkraken
 		cyberduck
-		# docker
+		docker
 		discord
 		brave-browser
 		insomnia

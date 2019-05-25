@@ -46,6 +46,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		1password
 		graphql-playground
 		now
+		electron
 	)
 	brew cask install "${apps[@]}"
 

@@ -1,29 +1,13 @@
 #!/usr/bin/env bash
 
-if [ "$(uname)" == "Darwin" ]; then
-	# Ask for the administrator password upfront
-	sudo -v
+[[ -x `command -v wget` ]] && CMD="wget --no-check-certificate -O -"
+[[ -x `command -v curl` ]] >/dev/null 2>&1 && CMD="curl -#L"
 
-	# Check for Homebrew and install it if missing
-	if test ! $(which brew)
-	then
-		echo "Installing Homebrew..."
-		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	fi
-
-    apps=(
-		git
-	)
-	brew install "${apps[@]}"
-
-    git init
-
+if [ -z "$CMD" ]; then
+  echo "No curl or wget available. Aborting."
+else
+  echo "Installing dotfiles"
+  mkdir -p "$HOME/dotfiles" && \
+  eval "$CMD https://github.com/Fallion/dotfiles/tarball/master | tar -xzv -C ~/dotfiles --strip-components=1 --exclude='{.gitignore}'"
+  . "$HOME/dotfiles/setup.sh"
 fi
-
-mkdir dotfiles
-cd dotfiles
-
-git remote add origin git@github.com:Fallion/dotfiles.git
-
-# Symlink dotfiles
-git pull origin master;

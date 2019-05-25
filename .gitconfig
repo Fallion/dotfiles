@@ -1,0 +1,5 @@
+[user]
+	name = Simon Prochazka
+    email = simon@fallion.net
+[push]
+	default = simple

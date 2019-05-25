@@ -21,3 +21,15 @@ git
 git clone git@github.com:fallion/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 sh setup.sh
+
+
+### Remote
+
+#### curl
+
+bash -c "`curl -fsSL https://raw.github.com/Fallion/dotfiles/master/remote-setup.sh`"
+
+
+#### wget
+
+bash -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/Fallion/dotfiles/master/remote-setup.sh`"

@@ -45,6 +45,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		visual-studio-code
 		1password
 		graphql-playground
+		now
 	)
 	brew cask install "${apps[@]}"
 

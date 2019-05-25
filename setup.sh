@@ -24,6 +24,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		python3
 		wget
 		zsh
+		make
 	)
 	brew install "${apps[@]}"
 	sudo easy_install pip

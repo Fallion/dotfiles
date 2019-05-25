@@ -49,6 +49,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		now
 		electron
 		google-cloud-sdk
+		kubernetes-cli
 		minikube
 	)
 	brew cask install "${apps[@]}"

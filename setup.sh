@@ -36,6 +36,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	brew tap caskroom/versions
 
 	apps=(
+		gitkraken
 		cyberduck
 		# docker
 		discord

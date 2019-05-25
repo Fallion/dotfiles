@@ -18,18 +18,24 @@ if (!(Verify-Elevated)) {
  Write-Host "Installing Package Providers..." -ForegroundColor "Yellow"
  Get-PackageProvider NuGet -Force | Out-Null
  # Chocolatey Provider is not ready yet. Use normal Chocolatey
- #Get-PackageProvider Chocolatey -Force
- #Set-PackageSource -Name chocolatey -Trusted
+ Get-PackageProvider Chocolatey -Force
+ Set-PackageSource -Name chocolatey -Trusted
  
  
  ### Install PowerShell Modules
- Write-Host "Installing PowerShell Modules..." -ForegroundColor "Yellow"
- Install-Module Posh-Git -Scope CurrentUser -Force
- Install-Module PSWindowsUpdate -Scope CurrentUser -Force 
+#  Write-Host "Installing PowerShell Modules..." -ForegroundColor "Yellow"
+#  Install-Module Posh-Git -Scope CurrentUser -Force
+#  Install-Module PSWindowsUpdate -Scope CurrentUser -Force 
+
+# $ChocoInstalled = $false
+# if (Get-Command choco.exe -ErrorAction SilentlyContinue) {
+#     $ChocoInstalled = $true
+# }
+
 
 ### Chocolatey
 Write-Host "Installing Desktop Utilities..." -ForegroundColor "Yellow"
-if ((which cinst) -eq $null) {
+if (!$ChocoInstalled) {
     iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
     Refresh-Environment
     choco feature enable -n=allowGlobalConfirmation

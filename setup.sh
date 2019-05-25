@@ -23,13 +23,10 @@ if [ "$(uname)" == "Darwin" ]; then
 		python
 		python3
 		wget
+		zsh
 	)
 	brew install "${apps[@]}"
 	sudo easy_install pip
-
-	# Install ZSH
-	echo -e "\u001b[7mInstalling Oh-My-Zsh...\u001b[0m"
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 	# Install Caskroom
 	brew tap caskroom/cask

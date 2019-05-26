@@ -14,32 +14,16 @@ if (!(Verify-Elevated)) {
  Update-Help -Force
  
  
- ### Package Providers
- Write-Host "Installing Package Providers..." -ForegroundColor "Yellow"
- Get-PackageProvider NuGet -Force | Out-Null
- # Chocolatey Provider is not ready yet. Use normal Chocolatey
- Get-PackageProvider Chocolatey -Force
- Set-PackageSource -Name chocolatey -Trusted
+### Package Providers
+Write-Host "Installing Package Providers..." -ForegroundColor "Yellow"
+Get-PackageProvider NuGet -Force | Out-Null
+# Chocolatey Provider is not ready yet. Use normal Chocolatey
+Get-PackageProvider Chocolatey -Force
+Set-PackageSource -Name chocolatey -Trusted
  
- 
- ### Install PowerShell Modules
-#  Write-Host "Installing PowerShell Modules..." -ForegroundColor "Yellow"
-#  Install-Module Posh-Git -Scope CurrentUser -Force
-#  Install-Module PSWindowsUpdate -Scope CurrentUser -Force 
-
-# $ChocoInstalled = $false
-# if (Get-Command choco.exe -ErrorAction SilentlyContinue) {
-#     $ChocoInstalled = $true
-# }
-
 
 ### Chocolatey
 Write-Host "Installing Desktop Utilities..." -ForegroundColor "Yellow"
-if (!$ChocoInstalled) {
-    iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
-    Refresh-Environment
-    choco feature enable -n=allowGlobalConfirmation
-}
 
 # system and cli
 choco install curl                --limit-output
@@ -47,6 +31,7 @@ choco install git.install         --limit-output -params '"/GitAndUnixToolsOnPat
 choco install nvm.portable        --limit-output
 choco install golang              --limit-output
 choco install dart-sdk            --limit-output
+choco install nvm.portable        --limit-output
 
 # browser
 choco install brave  --limit-output
@@ -63,7 +48,7 @@ choco install keybase --limit-output
 choco install steam --limit-output
 choco install spotify --limit-output
 
-Refresh-Environment
+refreshenv
 
 # nvm set up 
 nvm on

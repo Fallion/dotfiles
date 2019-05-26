@@ -36,4 +36,8 @@ sh setup.sh
 
 # Windows install
 
+For apps
 `Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Fallion/dotfiles/master/windows/install.ps1'))`
+
+For system settings
+`Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Fallion/dotfiles/master/windows/windows.ps1'))`

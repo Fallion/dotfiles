@@ -55,6 +55,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		google-cloud-sdk
 		kubernetes-cli
 		minikube
+		keybase
 	)
 	brew cask install "${apps[@]}"
 

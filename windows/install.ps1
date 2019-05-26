@@ -57,6 +57,7 @@ choco install 1password --limit-output
 choco install yarn --limit-output
 choco install kubernetes-cli --limit-output
 choco install slack --limit-output
+choco install keybase --limit-output
 
 # misc
 choco install steam --limit-output

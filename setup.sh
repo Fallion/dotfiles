@@ -19,6 +19,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	# Add tap for Dart
 	brew tap dart-lang/dart
 
+	echo "Installing Brew apps..."
 	apps=(
 		git
         go
@@ -37,6 +38,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	brew tap caskroom/cask
 	brew tap caskroom/versions
 
+	echo "Installing Brew Casks..."
 	apps=(
 		gitkraken
 		cyberduck
@@ -65,31 +67,6 @@ if [ "$(uname)" == "Darwin" ]; then
 	# Set screencapture location
 	defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
 	killall SystemUIServer
-
-	# # Set Dock items
-	# OLDIFS=$IFS
-	# IFS=''
-
-	# apps=(
-	# 	'Brave Browser'
-	# 	'Visual Studio Code'
-	# 	Insomnia
-	# 	Spotify
-	# 	Slack
-	# 	Cyberduck
-	# 	'System Preferences'
-	# )
-
-	# dockutil --no-restart --remove all $HOME
-	# for app in "${apps[@]}"
-	# do
-	# 	echo "Keeping $app in Dock"
-	# 	dockutil --no-restart --add /Applications/$app.app $HOME
-	# done
-	# killall Dock
-
-	# # restore $IFS
-	# IFS=$OLDIFS
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	# Ask for the administrator password upfront
@@ -120,10 +97,7 @@ git remote add origin git@github.com:Fallion/dotfiles.git
 # Symlink dotfiles
 git pull origin master;
 
-echo -e "\u001b[36;1mAdding symlinks...\u001b[0m"
 ln -sv $CWD/.zshrc ~/.zshrc
 ln -sv $CWD/.gitconfig ~/.gitconfig
-
-echo -e "\u001b[32;1mDone.\u001b[0m"
 
 done

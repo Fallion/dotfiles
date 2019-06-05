@@ -73,7 +73,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	sudo -v
 
 	# Make sure we’re using the latest repositories
-	apt update
+	apt-get update
 
 	apps=(
         go
@@ -85,8 +85,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 		screen
 		wget
 	)
-	apt install "${apps[@]}"
-    apt install python-pip python-dev build-essential
+	apt-get install "${apps[@]}"
+    apt-get install python-pip python-dev build-essential
 fi
 
 cd "$(dirname "${BASH_SOURCE}")";

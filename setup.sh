@@ -76,6 +76,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	apt-get update
 
 	apps=(
+		apt-transport-https
         go
 		git
 		nodejs
@@ -84,6 +85,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 		python3
 		screen
 		wget
+		code
 	)
 	apt-get install "${apps[@]}"
     apt-get install python-pip python-dev build-essential

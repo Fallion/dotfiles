@@ -87,7 +87,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 		brave
 		insomnia
 	)
-	for app in $apps
+	for app in "${apps[@]}"
 	do
 		sudo snap install "${app}" --classic
 	done

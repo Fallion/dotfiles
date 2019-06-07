@@ -73,22 +73,21 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	sudo -v
 
 	# Make sure we’re using the latest repositories
-	apt-get update
+	sudo apt update
+	sudo apt install snapd
 
 	apps=(
-		apt-transport-https
-        go
-		git
-		nodejs
-		npm
-		python
-		python3
-		screen
-		wget
+		go
+		node
+        spotify
 		code
+		slack
+		gitkraken
+		docker
+		brave
+		insomnia
 	)
-	apt-get install "${apps[@]}"
-    apt-get install python-pip python-dev build-essential
+	sudo snapd install "${apps[@]}" --classic
 fi
 
 cd "$(dirname "${BASH_SOURCE}")";

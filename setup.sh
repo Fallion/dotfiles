@@ -87,7 +87,10 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 		brave
 		insomnia
 	)
-	sudo snap install "${apps[@]}" --classic
+	for app in apps
+	do
+		sudo snap install "${app}" --classic
+	done
 fi
 
 cd "$(dirname "${BASH_SOURCE}")";

@@ -48,14 +48,14 @@ if [ "$(uname)" == "Darwin" ]; then
 		insomnia
 		slack
 		spotify
-		steam
+		# steam
 		visual-studio-code
 		1password
 		graphql-playground
 		now
 		electron
 		google-cloud-sdk
-		kubernetes-cli
+		# kubernetes-cli
 		minikube
 		keybase
 	)

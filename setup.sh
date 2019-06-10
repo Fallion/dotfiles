@@ -30,6 +30,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		zsh
 		make
 		dart
+		kubernetes-cli
 	)
 	brew install "${apps[@]}"
 	sudo easy_install pip
@@ -55,7 +56,6 @@ if [ "$(uname)" == "Darwin" ]; then
 		now
 		electron
 		google-cloud-sdk
-		# kubernetes-cli
 		minikube
 		keybase
 	)

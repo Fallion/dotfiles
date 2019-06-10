@@ -23,6 +23,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	apps=(
 		git
         go
+		n
 		node
 		python
 		python3

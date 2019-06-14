@@ -32,6 +32,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		make
 		dart
 		kubernetes-cli
+		protobuf
 	)
 	brew install "${apps[@]}"
 	sudo easy_install pip

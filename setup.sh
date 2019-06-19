@@ -60,6 +60,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		google-cloud-sdk
 		minikube
 		keybase
+		bloomrpc
 	)
 	brew cask install "${apps[@]}"
 

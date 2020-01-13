@@ -46,7 +46,6 @@ choco install keybase --limit-output
 
 # misc
 choco install steam --limit-output
-choco install spotify --limit-output
 
 refreshenv
 

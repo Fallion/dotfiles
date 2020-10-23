@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Ask for the administrator password upfront
-sudo -v
+# sudo -v
 
 # Check for Homebrew and install it if missing
 if test ! $(which brew)
@@ -13,7 +13,7 @@ fi
 # Make sure we’re using the latest Homebrew
 brew update
 # Upgrade any already-installed formulae
-brew upgrade --all
+brew upgrade
 
 # Add tap for Dart
 brew tap dart-lang/dart
@@ -37,8 +37,9 @@ brew install "${apps[@]}"
 sudo easy_install pip
 
 # Install Caskroom
-brew tap caskroom/cask
-brew tap caskroom/versions
+brew tap homebrew/cask
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
 
 echo "Installing Brew Casks..."
 apps=(
@@ -54,8 +55,8 @@ apps=(
 	google-cloud-sdk
 	keybase
 	bloomrpc
-	spectacle
 	notion
+	font-fira-code
 )
 brew cask install "${apps[@]}"
 

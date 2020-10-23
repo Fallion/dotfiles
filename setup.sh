@@ -75,7 +75,7 @@ git init
 git remote add origin git@github.com:fallion/dotfiles.git
 
 # Symlink dotfiles
-git pull origin master;
+git pull origin master
 
 ln -sv $CWD/.zshrc ~/.zshrc
 ln -sv $CWD/.gitconfig ~/.gitconfig

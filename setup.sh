@@ -32,6 +32,8 @@ apps=(
 	dart
 	kubernetes-cli
 	protobuf
+	starship
+	fish
 )
 brew install "${apps[@]}"
 sudo easy_install pip
